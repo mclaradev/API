@@ -6,14 +6,14 @@ app.use(express.json())
 const users = [];
 
 app.post('/users', (req, res) => {
-    console.log(req.body)
-    console.log('Servidor rodando na porta 3000')
+
+    users.push(req.body)
+
     res.send('ok, deu certo!')
 })
 
 app.get('/users', (req, res) => {
-    console.log('Servidor rodando na porta 3000')
-    res.send('ok, deu bom!')
+    res.json(users)
 })
 
 app.listen(3000)
